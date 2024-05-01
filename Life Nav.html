@@ -1,0 +1,69 @@
+class Goal:
+    def _init_(self, name, deadline, description):
+        self.name = name
+        self.deadline = deadline
+        self.description = description
+        self.completed = False
+
+    def mark_as_completed(self):
+        self.completed = True
+
+class Habit:
+    def _init_(self, name, frequency, description):
+        self.name = name
+        self.frequency = frequency  # Daily, Weekly, Monthly, etc.
+        self.description = description
+        self.completed_dates = []
+
+    def mark_as_completed(self, date):
+        self.completed_dates.append(date)
+
+class Mood:
+    def _init_(self, date, mood_rating, notes):
+        self.date = date
+        self.mood_rating = mood_rating  # Scale from 1 to 10
+        self.notes = notes
+
+class Meditation:
+    def _init_(self, duration, technique, date):
+        self.duration = duration  # in minutes
+        self.technique = technique
+        self.date = date
+
+class ProductivityTool:
+    def _init_(self, name, description, priority):
+        self.name = name
+        self.description = description
+        self.priority = priority  # High, Medium, Low
+        self.completed = False
+
+    def mark_as_completed(self):
+        self.completed = True
+
+# Sample usage:
+if _name_ == "_main_":
+    # Create a goal
+    my_goal = Goal("Learn Python Programming", "2024-12-31", "Become proficient in Python programming.")
+
+    # Create a habit
+    my_habit = Habit("Exercise", "Daily", "30 minutes of exercise.")
+
+    # Create a mood entry
+    my_mood = Mood("2024-04-22", 8, "Feeling motivated and focused today.")
+
+    # Create a meditation session
+    my_meditation = Meditation(10, "Mindfulness meditation", "2024-04-22")
+
+    # Create a productivity tool
+    my_tool = ProductivityTool("Task Manager", "Organize daily tasks efficiently.", "High")
+
+    # Update habit and productivity tool status
+    my_habit.mark_as_completed("2024-04-22")
+    my_tool.mark_as_completed()
+
+    # Print information
+    print("Goal:", my_goal.name)
+    print("Habit:", my_habit.name)
+    print("Mood:", my_mood.mood_rating)
+    print("Meditation Duration:", my_meditation.duration)
+    print("Productivity Tool Priority:", my_tool.priority)
